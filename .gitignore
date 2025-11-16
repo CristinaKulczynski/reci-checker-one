@@ -1,0 +1,6 @@
+﻿.vscode
+.venv
+.DS_Store
+**/.DS_Store
+resources/xml/
+__pycache__/
