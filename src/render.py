@@ -11,4 +11,4 @@ def render_result(results):
                      result["status"],
                      result["comments"]])
 
-    print(tabulate(data, headers=headers, tablefmt="grid"))
+    print(tabulate(data, headers=headers, maxcolwidths=[10, 80, 10, 50], tablefmt="simple_grid"))

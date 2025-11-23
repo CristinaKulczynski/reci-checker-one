@@ -29,9 +29,9 @@ python3 -m venv .venv
 
 source .venv/bin/activate
 
-pip install python-docx pymupdf pytest rich pydantic python-magic pdfminer.six tabulate
+pip install python-docx pymupdf pytest rich pydantic python-magic pdfminer.six tabulate ollama
 
-python3 src/main.py resources/Texto.docx resources/teste_folha_de_rosto.docx
+python3 src/main.py resources/Pronto.docx resources/teste_folha_de_rosto.docx
 
 deactivate
 

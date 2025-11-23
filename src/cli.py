@@ -38,5 +38,8 @@ def init():
     validate_manuscript(manuscript_path);
     cover_page_path = Path(args.folha_de_rosto)
     validate_cover_page(cover_page_path);
-    
-    return manuscript_path, cover_page_path
+
+    xml_path = Path(__file__).resolve().parent.parent / \
+        "resources" / "xml" / "manuscript_document.xml"
+
+    return manuscript_path, cover_page_path, xml_path

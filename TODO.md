@@ -1,80 +1,96 @@
 ## TODOs
 
-### 📂 Categoria do Manuscrito
+### Categoria do Manuscrito
 
-- [ ] Artigo original (mínimo 10 e máximo 25 referências nos últimos 5 anos)
+- [x] Artigo original (mínimo 10 e máximo 25 referências nos últimos 5 anos)
 
-### 🧾 Folha de Rosto
+### Metadados
 
-- [x] Apresenta título, nome completo dos autores, afiliação, ORCID, Lattes, endereço e e-mail do autor correspondente
-- [ ] Especifica as contribuições individuais de cada autor no formato:
-  - **Exemplo:** _Marília Saraiva – concepção, análise e interpretação de dados._
+- [x] 1. A autoria é composta de, no máximo, 6 autores (exceção em multicêntricos).
+- [x] 2. Nomes completos s/ abreviações.
+- [x] 3. Links ORCID e Lattes.
+- [x] 4. Instituição/Afiliação (com cidade e UF).
+- [ ] 5. Resumo da Biografia (categoria profissional e maior titulação).
 
-### 🧠 Metadados
-- [x] A autoria é composta de, no máximo, 10 autores (exceção em multicêntricos)  (vai estar na folha de rosto)
-- [x] Nomes completos, sem abreviações  
-- [x] Links ORCID e Lattes informados  
-- [x] Instituição/Afiliação (com cidade e UF)  
-- [x] Resumo da biografia (categoria profissional e maior titulação)
+### Folha de Rosto
 
-- [x] A autoria é composta de, no máximo, 10 autores (exceção em multicêntricos) (vai estar na folha de rosto)
-- [x] Nomes completos, sem abreviações
-- [x] Links ORCID e Lattes informados
-- [x] Instituição/Afiliação (com cidade e UF)
-- [x] Resumo da biografia (categoria profissional e maior titulação)
+- [x] 10. Apresenta título, nome completo dos autores, afiliação, ORCID, lattes, endereço e e-mail do autor correspondente e contribuições de autoria.
+- [ ] 11. São especificadas quais foram as contribuições individuais de cada autor na elaboração do artigo, no seguinte formato: nome completo de cada autor (em negrito e escrito por extenso), seguido das contribuições: Ex.: Marília Saraiva concepção análise e interpretação de dados.
 
-### 🧩 Formatação Geral do Manuscrito
+### Formatação Geral do Manuscrito
 
-- [x] Identificação de autoria removida das propriedades do Word
-- [x] Arquivo em formato Microsoft Word (.doc), até 2 MB
-- [ ] Redigido em português oficial, fonte _Times New Roman_ tamanho 12, espaçamento 1,5
-- [ ] Parágrafos sem espaçamento entre si (exceto Resumo, Figuras, Tabelas e Referências – espaçamento simples)
-- [ ] Palavras de idioma estrangeiro em itálico
-- [x] Artigos originais divididos em: Introdução, Métodos, Resultados, Discussão, Agradecimentos (opcional) e Referências
-- [ ] ~Artigos de revisão divididos em: Introdução, Métodos, Resultados e Discussão, Conclusão, Agradecimentos (opcional) e Referências~
-- [ ] Texto com até 4.000 palavras (da Introdução à Conclusão)
+- [x] 12. A identificação de autoria do trabalho foi removida do arquivo e da opção Propriedades no Word.
+- [x] 13. Está em formato Microsoft Word, digitado em .doc, até 2MB.
+- [ ] 14. Redigido na ortografia oficial, fonte Times New Roman 12, com espaçamento 1,5, sem espaçamento entre parágrafos (exceto: Resumo, Figuras, Tabelas e Referências – espaçamento simples).
+- [ ] ~15. Itálico para palavras de idioma diferente do manuscrito (ex.: nomes científicos: Acinetobacter baumanii, Klebsiella pneumoniae).~
+- [x] 16. Artigos originais: deverão ser divididos nas seguintes seções: Introdução, Métodos, Resultados, Discussão, Agradecimentos (opcional) e Referências.
+- [x] 18. Apresenta no máximo 4.000 palavras (da Introdução à Discussão/Conclusão).
 
-### 🏷️ Títulos
+### Títulos
 
-- [ ] Título curto, claro e conciso (máx. 15 palavras)
-- [ ] Título principal em negrito, centralizado, fonte 12, espaçamento simples e com apenas a primeira letra maiúscula
-- [ ] Títulos secundários em itálico, centralizados, fonte 12
-- [ ] O título em inglês foi cadastrado na plataforma
-- [ ] Título em três idiomas (português, inglês e espanhol)
+- [ ] 19. ~Inédito, curto, claro e conciso, identifica o conteúdo do manuscrito,~ com no máximo 15 palavras.
+- [ ] 20. Principal em negrito, centralizado, fonte tamanho 12, espaçamento simples e apenas a primeira letra em maiúsculo.
+- [ ] 21. Títulos secundários em itálico, centralizado, fonte tamanho 12, espaçamento simples e apenas a primeira letra em maiúsculo.
+- [ ] 22. ~O título do manuscrito foi cadastrado em inglês na plataforma, com apenas a primeira letra em maiúsculo.~
+- [ ] 23. Títulos nos três idiomas (português, inglês e espanhol).
 
-### 📊 Tabelas, Quadros e Figuras
+### Resumos
 
-- [ ] Máximo de 5 figuras e/ou tabelas inseridas no corpo do texto
-- [ ] Tabelas editáveis e numeradas em sequência
-- [ ] Dados apresentados de forma clara
-- [ ] Tabelas tituladas em cima, alinhadas à esquerda, fonte tamanho 10
-- [ ] Tabelas elaboradas no Word, espaçamento simples
-- [ ] Figuras com boa qualidade e numeradas em ordem sequencial
-- [ ] Figuras tituladas abaixo, alinhadas à esquerda, fonte tamanho 10
-- [ ] Gráficos padronizados na cor azul e com layout em colunas
-- [ ] Títulos de tabelas e figuras com explicação e recorte geográfico e temporal do estudo
-  - **Exemplo:**
-    - _Tabela 1._ Distribuição das características sociodemográficas e econômicas...
-    - _Figura 2._ Série temporal das taxas de detecção de sífilis...
+- [ ] ??. Abaixo dos títulos, com versões nos três idiomas.
+- [ ] 24. ~Conciso,~ limite máximo de 250 palavras, em parágrafo único, com espaçamento simples entre as linhas.
+- [x] 25. Justificativa e Objetivos, Métodos, Resultados e Conclusão (versão portuguesa).
+- [x] 26. Background and Objectives, Methods, Results e Conclusion (versão inglesa).
+- [x] 27. Justificación y objetivos, Métodos, Resultados e Conclusión (versão espanhola).
+- [x] 28. Artigos originais: estruturado e separado nas seguintes seções = Justificativa e Objetivos, Métodos, Resultados, Conclusão (todos em negrito, somente a primeira letra em maiúsculo e seguido por dois pontos).
 
-### 🔠 Símbolos, Abreviaturas e Siglas
+### Descritores
 
-- [ ] Siglas com até três letras em maiúsculas (Ex: DOU, USP, OIT)
-- [ ] Primeira aparição acompanhada do nome por extenso entre parênteses
+- [x] 30. Apresentados abaixo de cada versão do resumo, citados nos idiomas português, inglês e espanhol.
+- [x] 31. Apresenta de três (3) a cinco (5) descritores.
+- [x] 32. Utiliza as terminologias "Descritores", "Keywords" e "Palabras Clave", em negrito e primeira letra maiúscula.
+- [x] 33. Descritores, Keywords e Palabras Clave apresentam-se grifadas em itálico, separadas por ponto final.
 
-### 📚 Referências
+### Introdução
 
-- [ ] Seguem as **Normas de Vancouver** ([www.icmje.org](http://www.icmje.org))
-- [ ] Dispostas em **ordem sequencial numérica**
-- [ ] Citação obrigatória, sobrescrita e sem parênteses ao final do parágrafo
-- [ ] Referências separadas por ponto e vírgula
-- [ ] Quando em sequência, numeradas com hífen (ex.: ⁷⁻¹⁰)
-- [ ] Sem nomes de autores em destaque no texto
-- [ ] Em fonte 12, espaçamento simples, justificado
-- [ ] Pelo menos **40% das referências internacionais** dos últimos 5 anos
-- [ ] Incluem DOI ou endereço eletrônico quando disponível
-  - **Com DOI:**  
-    Almeida MF, Facchini LA, Portela LE. _Rev Bras Epidemiol._ 2012;15(4):691–693. [https://doi.org/10.1590/S1415-790X2012000400001](https://doi.org/10.1590/S1415-790X2012000400001)
-  - **Sem DOI:**  
-    Malta DC, Morais Neto OL, Silva Junior JB. _Epidemiol Serv Saúde._ 2011;20(4):93–107. [http://scielo.iec.pa.gov.br/pdf/ess/v20n4/v20n4a02.pdf](http://scielo.iec.pa.gov.br/pdf/ess/v20n4/v20n4a02.pdf)
-- [ ] Referências com até 6 autores (acima disso, usar “et al.”)
+### Método
+
+<!-- Done with Ollama -->
+
+- [x] 36. Delineamento.
+- [x] 37. Cenário estudado.
+- [x] 38. População.
+- [x] 39. Critérios de seleção (inclusão/exclusão).
+- [x] 40. Fonte de dados.
+- [x] 41. Período de coleta dos dados.
+- [x] 42. Tipo de análise realizada.
+
+### Aspectos Éticos
+
+### Resultados
+
+- [ ] 49. Os resultados estão descritos em sequência lógica. (LLM)
+
+### Discussão
+
+### Conclusão
+
+- [x] 53. Artigos originais não levam conclusão em seção separada, sendo incorporada ao último parágrafo da discussão; Artigos de revisão levam conclusão em seção separada.
+
+### Tabelas, Quadros e Figuras
+
+- [x] 54. Apresenta no máximo 5 figuras e/ou tabelas que devem estar apresentadas no corpo do texto.
+- [ ] 56. Tabelas estão tituladas em cima, alinhadas à esquerda e fonte no tamanho 10.
+- [x] 58. Tabelas são elaboradas no Word.
+- [x] 61. Figuras tituladas embaixo, alinhadas à esquerda e tamanho 10. (False negatives and positives due to difficulties on finding the expected title of the image).
+
+### Símbolos, Abreviaturas e Siglas
+
+- [ ] 65. Siglas ou acrônimos com até três letras deverão ser escritos com maiúsculas (Ex: DOU; USP; OIT). Em sua primeira aparição no texto, acrônimos desconhecidos serão escritos por extenso, acompanhados da sigla entre parênteses.
+
+### Referências
+
+- [x] 66. Apresentam-se nas Normas de Vancouver.
+- [x] 69. Estão em fonte 12, espaçamento simples, justificado.
+- [x] 71. Apresentam DOI nas referências ou endereço eletrônico?
+- [x] 72. Referencia-se o(s) autor(e)s pelo sobrenome. A letra inicial é maiúscula, seguida do(s) nome(s) abreviado(s) e sem o ponto. Ex: Posma DM, Bill D, Parker RJ.
+- [x] 73. Citam pelo menos três nomes dos autores antes da expressão "et al". Ex: Calman JW, Josh MKH, Gehardt JE, et al.
