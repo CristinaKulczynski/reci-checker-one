@@ -11,7 +11,7 @@ from references import *
 from descriptors import *
 from abstracts import *
 from pdf_render import export_results_to_pdf
-
+from titles import *
 
 
 def main():
@@ -26,11 +26,17 @@ def main():
         item_3(manuscript_text),
         item_4(manuscript_text),
         item_10(cover_page_text),
+        item_11(xml_path),
         item_12(manuscript_path),
         item_13(manuscript_path),
         item_14(manuscript_path),
         item_16(manuscript_text),
         item_18(manuscript_text),
+        item_19(manuscript_text),
+        item_20(manuscript_path),
+        item_21(manuscript_path),
+        item_23(manuscript_text),
+        item_24(xml_path),
         *(item_28(xml_path)),
         item_30(manuscript_text),
         item_31(manuscript_text),
@@ -48,9 +54,9 @@ def main():
     ]
 
     render_result(results)
-    export_results_to_pdf(results)
-    #ollama_results = parse_ollama_results(item_generico(manuscript_text))
-    #render_result(ollama_results)
+    # export_results_to_pdf(results)
+    # ollama_results = parse_ollama_results(item_generico(manuscript_text))
+    # render_result(ollama_results)
 
     return 0
 

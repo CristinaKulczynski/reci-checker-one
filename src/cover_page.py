@@ -1,4 +1,6 @@
 from metadata import *
+import re
+import xml.etree.ElementTree as ET
 
 AUTHORS_PATTERN = r"^Autor\s*:\s*(.*)"
 
@@ -145,3 +147,157 @@ def item_10(cover_page_text):
             "description": description,
             "status": status,
             "comments": comments}
+
+
+def _is_bold(run, ns):
+    run_props = run.find('.//w:rPr', ns)
+    return run_props is not None and run_props.find('.//w:b', ns) is not None
+
+
+def _get_para_text(runs, ns):
+    return ''.join([
+        t.text for r in runs
+        for t in [r.find('.//w:t', ns)]
+        if t is not None and t.text is not None
+    ])
+
+
+def item_11(xml_path):
+    description = "São especificadas quais foram as contribuições individuais de cada autor na elaboração do artigo, no seguinte formato: nome completo de cada autor (em negrito e escrito por extenso), seguido das contribuições."
+    status = "A"
+    comments = []
+
+    try:
+        cover_page_xml = str(xml_path).replace(
+            "manuscript_document.xml", "cover_page_document.xml")
+        tree = ET.parse(cover_page_xml)
+        ns = {'w': 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
+        paragraphs = tree.findall('.//w:p', ns)
+
+        contrib_start_idx = -1
+        for i, para in enumerate(paragraphs):
+            para_text = _get_para_text(para.findall('.//w:r', ns), ns)
+            if re.search(r'Contribuições\s+dos\s+autores:', para_text, re.IGNORECASE):
+                contrib_start_idx = i
+                break
+
+        if contrib_start_idx == -1:
+            return {
+                "item": 11,
+                "description": description,
+                "status": "NA",
+                "comments": "Seção 'Contribuições dos autores:' não encontrada"
+            }
+
+        authors = []
+        for para in paragraphs[:contrib_start_idx]:
+            para_text = _get_para_text(para.findall('.//w:r', ns), ns)
+            autor_match = re.match(r'^\s*Autor\s*:\s*(.+)', para_text)
+            if autor_match:
+                author_name = re.sub(
+                    r'\d+$', '', autor_match.group(1).strip()).strip()
+                if author_name:
+                    authors.append(author_name)
+
+        author_contributions = []
+        authors_found_in_contributions = []
+
+        for i in range(contrib_start_idx + 1, len(paragraphs)):
+            runs = paragraphs[i].findall('.//w:r', ns)
+            para_text = _get_para_text(runs, ns).strip()
+
+            if para_text and (para_text.startswith('Autor Correspondente') or
+                              para_text.startswith('Endereço') or
+                              para_text.startswith('Todos os autores')):
+                break
+
+            if not para_text:
+                continue
+
+            bold_text = ""
+            for run in runs:
+                text_elem = run.find('.//w:t', ns)
+                if text_elem is None or text_elem.text is None:
+                    continue
+                if _is_bold(run, ns):
+                    bold_text += text_elem.text
+                else:
+                    break
+
+            if bold_text:
+                bold_name = bold_text.strip()
+
+                contribution_text = ""
+                found_bold = False
+                for run in runs:
+                    text_elem = run.find('.//w:t', ns)
+                    if text_elem is None or text_elem.text is None:
+                        continue
+                    if _is_bold(run, ns):
+                        found_bold = True
+                    elif found_bold:
+                        contribution_text += text_elem.text
+
+                author_contributions.append({
+                    'bold_name': bold_name,
+                    'contribution_text': contribution_text.strip()
+                })
+
+                if ' e ' in bold_name:
+                    authors_found_in_contributions.extend(
+                        [n.strip() for n in bold_name.split(' e ')])
+                else:
+                    authors_found_in_contributions.append(bold_name)
+
+        if not author_contributions:
+            status = "NA"
+            comments.append("Nenhuma contribuição de autor encontrada")
+        else:
+            for contrib in author_contributions:
+                if not contrib['bold_name']:
+                    status = "NA"
+                    comments.append("Contribuição sem nome em negrito")
+                    break
+                elif len(contrib['bold_name'].split()) < 2 and ' e ' not in contrib['bold_name']:
+                    status = "NA"
+                    comments.append(
+                        f"Nome muito curto ou incompleto: '{contrib['bold_name']}'")
+                    break
+                elif not contrib['contribution_text']:
+                    status = "NA"
+                    comments.append(
+                        f"Autor '{contrib['bold_name']}' não possui descrição de contribuição")
+                    break
+
+            if authors and status == "A":
+                def normalize(name): return name.lower().strip()
+                normalized_authors = [normalize(a) for a in authors]
+                normalized_found = [normalize(a)
+                                    for a in authors_found_in_contributions]
+
+                missing = [a for a in normalized_authors
+                           if not any(a in f or f in a for f in normalized_found)]
+
+                if missing:
+                    status = "NA"
+                    comments.append(
+                        f"Autores não encontrados nas contribuições: {', '.join(missing)}")
+
+        if status == "A":
+            comments.append(
+                f"Seção 'Contribuições dos autores' está correta ({len(author_contributions)} parágrafo(s), {len(authors_found_in_contributions)} autor(es))")
+
+    except Exception as e:
+        return {
+            "item": 11,
+            "description": description,
+            "status": "-",
+            "comments": f"Erro ao processar XML: {str(e)}"
+        }
+
+    return {
+        "item": 11,
+        "description": description,
+        "status": status,
+        "comments": "; ".join(comments) if comments else ""
+    }

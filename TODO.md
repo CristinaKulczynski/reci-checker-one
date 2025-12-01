@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD041 -->
 ## TODOs
 
 ### Categoria do Manuscrito
@@ -10,34 +11,29 @@
 - [x] 2. Nomes completos s/ abreviações.
 - [x] 3. Links ORCID e Lattes.
 - [x] 4. Instituição/Afiliação (com cidade e UF).
-- [ ] 5. Resumo da Biografia (categoria profissional e maior titulação).
 
 ### Folha de Rosto
 
 - [x] 10. Apresenta título, nome completo dos autores, afiliação, ORCID, lattes, endereço e e-mail do autor correspondente e contribuições de autoria.
-- [ ] 11. São especificadas quais foram as contribuições individuais de cada autor na elaboração do artigo, no seguinte formato: nome completo de cada autor (em negrito e escrito por extenso), seguido das contribuições: Ex.: Marília Saraiva concepção análise e interpretação de dados.
+- [x] 11. São especificadas quais foram as contribuições individuais de cada autor na elaboração do artigo, no seguinte formato: nome completo de cada autor (em negrito e escrito por extenso), seguido das contribuições: Ex.: Marília Saraiva concepção análise e interpretação de dados.
 
 ### Formatação Geral do Manuscrito
 
 - [x] 12. A identificação de autoria do trabalho foi removida do arquivo e da opção Propriedades no Word.
 - [x] 13. Está em formato Microsoft Word, digitado em .doc, até 2MB.
-- [ ] 14. Redigido na ortografia oficial, fonte Times New Roman 12, com espaçamento 1,5, sem espaçamento entre parágrafos (exceto: Resumo, Figuras, Tabelas e Referências – espaçamento simples).
-- [ ] ~15. Itálico para palavras de idioma diferente do manuscrito (ex.: nomes científicos: Acinetobacter baumanii, Klebsiella pneumoniae).~
 - [x] 16. Artigos originais: deverão ser divididos nas seguintes seções: Introdução, Métodos, Resultados, Discussão, Agradecimentos (opcional) e Referências.
 - [x] 18. Apresenta no máximo 4.000 palavras (da Introdução à Discussão/Conclusão).
 
 ### Títulos
 
-- [ ] 19. ~Inédito, curto, claro e conciso, identifica o conteúdo do manuscrito,~ com no máximo 15 palavras.
-- [ ] 20. Principal em negrito, centralizado, fonte tamanho 12, espaçamento simples e apenas a primeira letra em maiúsculo.
-- [ ] 21. Títulos secundários em itálico, centralizado, fonte tamanho 12, espaçamento simples e apenas a primeira letra em maiúsculo.
-- [ ] 22. ~O título do manuscrito foi cadastrado em inglês na plataforma, com apenas a primeira letra em maiúsculo.~
-- [ ] 23. Títulos nos três idiomas (português, inglês e espanhol).
+- [x] 19. Com no máximo 15 palavras.
+- [x] 20. Principal em negrito, centralizado, fonte tamanho 12, espaçamento simples ~e apenas a primeira letra em maiúsculo~.
+- [x] 21. Títulos secundários em itálico, centralizado, fonte tamanho 12, espaçamento simples ~e apenas a primeira letra em maiúsculo~.
+- [x] 23. Títulos nos três idiomas (português, inglês e espanhol).
 
 ### Resumos
 
-- [ ] ??. Abaixo dos títulos, com versões nos três idiomas.
-- [ ] 24. ~Conciso,~ limite máximo de 250 palavras, em parágrafo único, com espaçamento simples entre as linhas.
+- [x] 24. Limite máximo de 250 palavras, em parágrafo único, com espaçamento simples entre as linhas.
 - [x] 25. Justificativa e Objetivos, Métodos, Resultados e Conclusão (versão portuguesa).
 - [x] 26. Background and Objectives, Methods, Results e Conclusion (versão inglesa).
 - [x] 27. Justificación y objetivos, Métodos, Resultados e Conclusión (versão espanhola).
@@ -54,8 +50,6 @@
 
 ### Método
 
-<!-- Done with Ollama -->
-
 - [x] 36. Delineamento.
 - [x] 37. Cenário estudado.
 - [x] 38. População.
@@ -68,8 +62,6 @@
 
 ### Resultados
 
-- [ ] 49. Os resultados estão descritos em sequência lógica. (LLM)
-
 ### Discussão
 
 ### Conclusão
@@ -79,13 +71,10 @@
 ### Tabelas, Quadros e Figuras
 
 - [x] 54. Apresenta no máximo 5 figuras e/ou tabelas que devem estar apresentadas no corpo do texto.
-- [ ] 56. Tabelas estão tituladas em cima, alinhadas à esquerda e fonte no tamanho 10.
 - [x] 58. Tabelas são elaboradas no Word.
 - [x] 61. Figuras tituladas embaixo, alinhadas à esquerda e tamanho 10. (False negatives and positives due to difficulties on finding the expected title of the image).
 
 ### Símbolos, Abreviaturas e Siglas
-
-- [ ] 65. Siglas ou acrônimos com até três letras deverão ser escritos com maiúsculas (Ex: DOU; USP; OIT). Em sua primeira aparição no texto, acrônimos desconhecidos serão escritos por extenso, acompanhados da sigla entre parênteses.
 
 ### Referências
 

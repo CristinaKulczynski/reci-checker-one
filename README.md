@@ -7,10 +7,13 @@ O projeto realiza a leitura de arquivos `.docx` e `.pdf`, extrai texto, imagens 
 
 - Python 3.11 ou superior
 - `pip` atualizado:
+
   ```bash
   python -m ensurepip --upgrade
   ```
+
 - (Opcional, recomendado) ambiente virtual:
+
   ```bash
   # Criar o ambiente
   python -m venv .venv
@@ -23,13 +26,14 @@ O projeto realiza a leitura de arquivos `.docx` e `.pdf`, extrai texto, imagens 
 ## 📦 Instalação de dependências
 
 Instale os pacotes necessários com:
+
 ```bash
 
 python3 -m venv .venv
 
 source .venv/bin/activate
 
-pip install python-docx pymupdf pytest rich pydantic python-magic pdfminer.six tabulate ollama
+pip install python-docx pymupdf pytest rich pydantic python-magic pdfminer.six tabulate ollama reportlab nltk
 
 python3 src/main.py resources/Pronto.docx resources/teste_folha_de_rosto.docx
 
@@ -41,8 +45,8 @@ deactivate
 
 | Pacote           | Função                                                             |
 |------------------|--------------------------------------------------------------------|
-| `python-docx`    | Leitura e extração de texto e imagens de arquivos `.docx`.        |
-| `pymupdf (fitz)` | Leitura de `.pdf`, contagem de páginas e imagens.                 |
+| `python-docx`    | Leitura e extração de texto e imagens de arquivos `.docx`.         |
+| `pymupdf (fitz)` | Leitura de `.pdf`, contagem de páginas e imagens.                  |
 | `pytest`         | Execução dos testes automatizados.                                 |
 | `rich`           | Exibição de logs coloridos e formatados no terminal.               |
 | `pydantic`       | Modelagem e validação de dados (usado nas próximas etapas).        |
@@ -51,7 +55,7 @@ deactivate
 
 ## 🧩 Estrutura do projeto
 
-```
+``` bash
 reci-checker/
 ├─ programa.py
 ├─ pyproject.toml
@@ -65,6 +69,7 @@ reci-checker/
 ## ▶️ Como executar
 
 Na pasta do projeto:
+
 ```bash
 python programa.py caminho/arquivo.docx
 # ou

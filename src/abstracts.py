@@ -111,6 +111,96 @@ def _check_abstract_sections(xml_path, abstract_name, sections, item_number, des
     }
 
 
+def item_24(xml_path):
+    description = "Limite máximo de 250 palavras, em parágrafo único, com espaçamento simples entre as linhas."
+    status = "A"
+    comments = []
+
+    try:
+        tree = ET.parse(xml_path)
+        ns = {'w': 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
+        paragraphs = tree.findall('.//w:p', ns)
+
+        # Find the RESUMO section
+        abstract_paras = _find_abstract_section(paragraphs, 'RESUMO', ns)
+
+        if not abstract_paras:
+            return {
+                "item": 24,
+                "description": description,
+                "status": "NA",
+                "comments": "RESUMO não encontrado"
+            }
+
+        # Skip the first paragraph (the title "RESUMO")
+        content_paras = abstract_paras[1:]
+
+        # Count non-empty paragraphs (excluding the title and descriptors)
+        non_empty_paras = []
+        for para in content_paras:
+            para_text = _get_para_text(para.findall('.//w:r', ns), ns).strip()
+            # Ignore empty paragraphs and descriptors/keywords lines
+            if para_text and not re.match(r'^\s*(Descritores|Unitermos|Palavras-chave):', para_text, re.IGNORECASE):
+                non_empty_paras.append(para)
+
+        # Check if it's a single paragraph
+        if len(non_empty_paras) == 0:
+            status = "NA"
+            comments.append("RESUMO está vazio")
+        elif len(non_empty_paras) > 1:
+            status = "NA"
+            comments.append(f"RESUMO deve ter apenas um parágrafo, encontrado {len(non_empty_paras)}")
+
+        # Count words in all non-empty paragraphs
+        total_text = ""
+        for para in non_empty_paras:
+            para_text = _get_para_text(para.findall('.//w:r', ns), ns)
+            total_text += " " + para_text
+
+        word_count = len(total_text.strip().split())
+
+        if word_count > 250:
+            status = "NA"
+            comments.append(f"RESUMO tem {word_count} palavras, máximo permitido: 250")
+
+        # Check line spacing for content paragraphs
+        for para in non_empty_paras:
+            para_props = para.find('.//w:pPr', ns)
+            if para_props is not None:
+                spacing = para_props.find('.//w:spacing', ns)
+                if spacing is not None:
+                    # Check line spacing
+                    line_rule = spacing.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}lineRule')
+                    line_val = spacing.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}line')
+                    
+                    # Simple spacing = 240 twips or line rule "auto" with line "240"
+                    # Or lineRule "exact" with line "240"
+                    if line_rule == "auto" and line_val and int(line_val) != 240:
+                        status = "NA"
+                        comments.append(f"RESUMO não tem espaçamento simples (encontrado: {line_val})")
+                    elif line_rule == "exact" and line_val and int(line_val) != 240:
+                        status = "NA"
+                        comments.append(f"RESUMO não tem espaçamento simples (encontrado: {line_val})")
+
+        if status == "A":
+            comments.append(f"RESUMO formatado corretamente ({word_count} palavras, parágrafo único, espaçamento simples)")
+
+    except Exception as e:
+        return {
+            "item": 24,
+            "description": description,
+            "status": "-",
+            "comments": f"Erro ao processar XML: {str(e)}"
+        }
+
+    return {
+        "item": 24,
+        "description": description,
+        "status": status,
+        "comments": "; ".join(comments) if comments else ""
+    }
+
+
 def item_25(xml_path):
     description = "Justificativa e Objetivos, Métodos, Resultados e Conclusão (versão portuguesa)."
     sections = ['Justificativa e Objetivos:',
