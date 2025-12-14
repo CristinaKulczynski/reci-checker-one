@@ -31,7 +31,7 @@ def validate_cover_page(cover_page_path):
 def init():
     parser = argparse.ArgumentParser()
     parser.add_argument("manuscrito", help="Caminho para o manuscrito (.docx)")
-    parser.add_argument("folha_de_rosto", help="Caminho para a folah de rosto (.docx)")
+    parser.add_argument("folha_de_rosto", help="Caminho para a folha de rosto (.docx)")
     args = parser.parse_args()
 
     manuscript_path = Path(args.manuscrito)

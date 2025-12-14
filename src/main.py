@@ -54,11 +54,11 @@ def main():
     ]
 
     render_result(results)
-    # export_results_to_pdf(results)
-    # ollama_results = parse_ollama_results(item_generico(manuscript_text))
-    # render_result(ollama_results)
-
-    return 0
+    export_results_to_pdf(results)
+    ollama_results = parse_ollama_results(item_generico(manuscript_text))
+    render_result(ollama_results)
+    
+    return 
 
 
 if __name__ == "__main__":
