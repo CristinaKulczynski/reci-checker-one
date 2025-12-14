@@ -86,6 +86,8 @@ reci-checker/
 
 Na pasta do projeto:
 
+> ⚠️ <span style="color:red"><strong>Baixe todas as dependências para que a ferramenta funcione ;)</strong></span>
+
 ```bash
 # Formato de execução:
 python src/main.py <caminho/manuscrito.docx> <caminho/folha_de_rosto.docx>
